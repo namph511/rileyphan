@@ -56,9 +56,10 @@ export const SITE_CONTENT: SiteContent = {
       position: "Crew Member",
       startDate: "Aug 2024",
       endDate: "now",
-      summary:
+      summary: [
         "Provided fast, friendly, and efficient service to customers in a high-paced environment.",
         "Handled high volumes of customers while maintaining accuracy and efficiency.",
+      ],
     },
   ],
   projects: [
