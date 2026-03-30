@@ -1,10 +1,10 @@
 import type { SiteConfig, SiteContent } from "../types";
 
 export const SITE_CONFIG: SiteConfig = {
-  title: "Alejandro Múnez — Mobile & Web Developer",
-  author: "Alejandro Múnez Cuntez",
+  title: "Riley Phan - 3D Character Animator",
+  author: "Riley Phan",
   description:
-    "Software Engineer based in San Francisco, USA. I specialize in UI design, web and mobile application development and maintenance.",
+    "3D Character Animator based in Toronto, Canada. I specialize in 3D character animation, body mechanics, motion capture.",
   lang: "en",
   siteLogo: "/alejandro-small.jpg",
   navLinks: [
@@ -13,11 +13,9 @@ export const SITE_CONFIG: SiteConfig = {
     { text: "About", href: "#about" },
   ],
   socialLinks: [
-    { text: "Twitter", href: "https://github.com/immois/astro-zen" },
-    { text: "LinkedIn", href: "https://github.com/immois/astro-zen" },
-    { text: "Github", href: "https://github.com/immois/astro-zen" },
-    { text: "Youtube", href: "https://github.com/immois/astro-zen" },
-    { text: "Dribbble", href: "https://github.com/immois/astro-zen" },
+    { text: "LinkedIn", href: "https://www.linkedin.com/in/namph511" },
+    { text: "Youtube", href: "https://www.youtube.com/@namphan7246" },
+    { text: "ArtStation", href: "https://www.artstation.com/namtheblack" },
   ],
   socialImage: "/zen-og.png",
   canonicalURL: "https://astro-zen.vercel.app",
@@ -25,49 +23,50 @@ export const SITE_CONFIG: SiteConfig = {
 
 export const SITE_CONTENT: SiteContent = {
   hero: {
-    name: "Alejandro Múnez",
-    specialty: "Mobile & Web Developer",
+    name: "Riley Phan",
+    specialty: "3D Character Animator",
     summary:
-      "Developer based in San Francisco, USA. I specialize in UI design, web and mobile application development and maintenance.",
-    email: "example@email.com",
+      "3D Character Animator based in Toronto, Canada. I specialize in 3D character animation, body mechanics, motion capture.",
+    email: "namph511@gmail.com",
   },
   experience: [
     {
-      company: "Zalmart",
-      position: "Lead Android Developer",
-      startDate: "May 2018",
-      endDate: "Sept 2020",
+      company: "Sparx* - A Virtuos Studio",
+      position: "Animator",
+      startDate: "Nov 2021",
+      endDate: "Aug 2023",
       summary: [
-        "Implemented advanced memory management and code optimization techniques, resulting in a reduction in application load time by 40% and a decrease in crashes by 25%. This significantly improved user experience and increased user retention by 20%.",
-        "I led a team of developers in building and integrating new features using Jetpack Android components such as LiveData and ViewModel. This enabled us to build scalable and maintainable applications, reducing the crash rate by 20% and speeding up the time to delivery of new features by 15%.",
-        "Integrated Google Pay for in-app purchases, resulting in a 35% increase in mobile transaction revenue. Additionally, implemented Firebase Analytics to gain insights into user behavior, enabling data-driven optimizations and a 30% increase in user retention.",
+        "I animated 3D models, including acting and sequences for cutscenes, movies, and games.",
+        "Handling multiple software apps for animation, such as Maya, 3DS Max and Unreal Engine",
+        "Follow the director's direction and deliver punctual client notes on-time.",
       ],
     },
     {
-      company: "Bankit",
-      position: "Mobile Developer",
-      startDate: "Feb 2017",
-      endDate: "May 2018",
+      company: "Humber College",
+      position: "3D animation student",
+      startDate: "Sept 2023",
+      endDate: "April 2026",
       summary: [
-        "I designed and developed a mobile application using Flutter, allowing it to be deployed on both Android and iOS with a single codebase. This reduced development time by 50% and maintenance costs by 30%, facilitating a consistent user experience on both platforms.",
-        "I integrated biometric authentication and data encryption, significantly improving the security of user data. This implementation resulted in a 40% increase in user trust and a 25% reduction in unauthorized access attempts.",
+        "I improved my animation skills and gained a lot of experience in art style.",
+        "I led the animation department of a team with 19 people for a 3D animated short film project.",
       ],
     },
     {
-      company: "Driveer",
-      position: "Frontend Developer",
-      startDate: "Jun 2015",
-      endDate: "Oct 2016",
+      company: "McDonald's Canada",
+      position: "Crew Member",
+      startDate: "Aug 2024",
+      endDate: "now",
       summary:
-        "Developed and integrated a real-time vehicle tracking system using WebSockets, improving accuracy and data update in the application. This functionality increased user satisfaction by 30% and reduced customer service inquiries by 25%.",
+        "Provided fast, friendly, and efficient service to customers in a high-paced environment.",
+        "Handled high volumes of customers while maintaining accuracy and efficiency.",
     },
   ],
   projects: [
     {
-      name: "Spotifu Music",
-      summary: "A music streaming app that emulates Spotify's core features.",
+      name: "The Last Beep - Student 3D Animated Short Film Project",
+      summary: "A sudden incident of a cat and its owner in daily life.",
       linkPreview: "/",
-      linkSource: "https://github.com/immois/astro-zen",
+      linkSource: "https://humberital-my.sharepoint.com/:v:/g/personal/n01607582_humber_ca/IQCA_TH0vrKrQaV66Ty1UvcxAQ0K9IMws_zW9HaVkp7KlGg?e=XtYgXs",
       image: "/spotifu.png",
     },
     {
@@ -87,9 +86,9 @@ export const SITE_CONTENT: SiteContent = {
   ],
   about: {
     description: `
-      Hi, I’m Alejandro Múnez, a passionate Mobile and Web Developer with a knack for crafting seamless digital experiences. With a strong background in both Android and iOS development, as well as front-end web technologies, I thrive in the intersection where creativity meets technology.
+      Hi, I’m Riley Phan, a passionate 3D Animator. With a strong background in animation, I thrive in the intersection where creativity meets technology.
 
-      Over the years, I’ve honed my skills in building robust, user-friendly applications that not only meet the needs of users but also push the boundaries of what’s possible. My projects range from innovative mobile applications to responsive web designs, all with a focus on performance, security, and scalability.
+      Over the years, I’ve honed my skills in building robust, eye-catching animations that not only meet the needs of viewers but also push the boundaries of what’s possible. My projects range from simple to the most complicated animations, all with a focus on performance, punctuality, and scalability.
     `,
     image: "/alejandro-big.jpg",
   },
