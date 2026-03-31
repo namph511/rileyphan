@@ -6,7 +6,7 @@ export const SITE_CONFIG: SiteConfig = {
   description:
     "3D Character Animator based in Toronto, Canada. I specialize in 3D character animation, body mechanics, motion capture.",
   lang: "en",
-  siteLogo: "/riley.jpg",
+  siteLogo: "/riley-small.jpg",
   navLinks: [
     { text: "Experience", href: "#experience" },
     { text: "Projects", href: "#projects" },
