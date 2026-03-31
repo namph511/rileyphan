@@ -6,7 +6,7 @@ export const SITE_CONFIG: SiteConfig = {
   description:
     "3D Character Animator based in Toronto, Canada. I specialize in 3D character animation, body mechanics, motion capture.",
   lang: "en",
-  siteLogo: "/alejandro-small.jpg",
+  siteLogo: "/riley.jpg",
   navLinks: [
     { text: "Experience", href: "#experience" },
     { text: "Projects", href: "#projects" },
@@ -91,7 +91,7 @@ export const SITE_CONTENT: SiteContent = {
 
       Over the years, I’ve honed my skills in building robust, eye-catching animations that not only meet the needs of viewers but also push the boundaries of what’s possible. My projects range from simple to the most complicated animations, all with a focus on performance, punctuality, and scalability.
     `,
-    image: "/alejandro-big.jpg",
+    image: "/riley-big.jpg",
   },
 };
 
