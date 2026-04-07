@@ -10,12 +10,8 @@ import "../styles/global.css";
 ---
 
 <Layout>
-
-  <section class="w-full h-screen bg-black flex items-center justify-center relative">
-
-  <!-- VIDEO -->
+  <section class="w-full h-screen bg-black flex items-center justify-center">
   <video 
-    id="heroVideo"
     autoplay 
     muted 
     loop 
@@ -24,63 +20,7 @@ import "../styles/global.css";
   >
     <source src="/demo.mp4" type="video/mp4" />
   </video>
-
-  <!-- CONTROLS -->
-  <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/70 to-transparent">
-
-    <!-- PROGRESS BAR -->
-    <input 
-      id="progressBar"
-      type="range" 
-      value="0" 
-      step="0.1"
-      class="w-full mb-3"
-    />
-
-    <!-- BUTTONS -->
-    <div class="flex items-center gap-4 text-white text-sm">
-      <button id="playBtn">Pause</button>
-      <button id="muteBtn">Unmute 🔊</button>
-    </div>
-
-  </div>
-
 </section>
-
-<script>
-  const video = document.getElementById("heroVideo");
-  const playBtn = document.getElementById("playBtn");
-  const muteBtn = document.getElementById("muteBtn");
-  const progress = document.getElementById("progressBar");
-
-  // PLAY / PAUSE
-  playBtn.addEventListener("click", () => {
-    if (video.paused) {
-      video.play();
-      playBtn.textContent = "Pause";
-    } else {
-      video.pause();
-      playBtn.textContent = "Play";
-    }
-  });
-
-  // MUTE / UNMUTE
-  muteBtn.addEventListener("click", () => {
-    video.muted = !video.muted;
-    muteBtn.textContent = video.muted ? "Unmute 🔊" : "Mute 🔇";
-  });
-
-  // UPDATE PROGRESS
-  video.addEventListener("timeupdate", () => {
-    progress.value = (video.currentTime / video.duration) * 100 || 0;
-  });
-
-  // SEEK
-  progress.addEventListener("input", () => {
-    video.currentTime = (progress.value / 100) * video.duration;
-  });
-</script>
-
   <Hero {...SITE_CONTENT.hero} />
   <Experience experience={SITE_CONTENT.experience} />
   <Projects projects={SITE_CONTENT.projects} />
