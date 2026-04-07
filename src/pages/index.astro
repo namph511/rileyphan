@@ -10,17 +10,43 @@ import "../styles/global.css";
 ---
 
 <Layout>
-  <section class="w-full h-screen bg-black flex items-center justify-center">
-  <video 
-    autoplay 
-    muted 
-    loop 
-    playsinline
-    class="w-full h-full object-contain"
-  >
-    <source src="/demo.mp4" type="video/mp4" />
-  </video>
-</section>
+  <script is:inline>
+  const video = document.getElementById("heroVideo");
+  const playBtn = document.getElementById("playBtn");
+  const muteBtn = document.getElementById("muteBtn");
+  const progress = document.getElementById("progressBar");
+
+  if (video && playBtn && muteBtn && progress) {
+
+    // PLAY / PAUSE
+    playBtn.addEventListener("click", () => {
+      if (video.paused) {
+        video.play();
+        playBtn.textContent = "Pause";
+      } else {
+        video.pause();
+        playBtn.textContent = "Play";
+      }
+    });
+
+    // MUTE / UNMUTE
+    muteBtn.addEventListener("click", () => {
+      video.muted = !video.muted;
+      muteBtn.textContent = video.muted ? "Unmute 🔊" : "Mute 🔇";
+    });
+
+    // UPDATE PROGRESS
+    video.addEventListener("timeupdate", () => {
+      progress.value = (video.currentTime / video.duration) * 100 || 0;
+    });
+
+    // SEEK
+    progress.addEventListener("input", () => {
+      video.currentTime = (progress.value / 100) * video.duration;
+    });
+
+  }
+</script>
   <Hero {...SITE_CONTENT.hero} />
   <Experience experience={SITE_CONTENT.experience} />
   <Projects projects={SITE_CONTENT.projects} />
