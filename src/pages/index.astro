@@ -11,92 +11,89 @@ import "../styles/global.css";
 
 <Layout>
 
-  <!-- 🎬 VIDEO (NO GAP FIXED) -->
-  <section class="w-full h-[90vh] bg-black flex items-center justify-center relative m-0 p-0">
+  <!-- 🎬 FULL SCREEN VIDEO HERO (OUTSIDE CENTER LAYOUT EFFECT) -->
+  <div class="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen">
 
-    <video 
-      id="heroVideo"
-      autoplay 
-      muted 
-      loop 
-      playsinline
-      class="w-full h-full object-contain"
-    >
-      <source src="/demo.mp4" type="video/mp4" />
-    </video>
+    <section class="relative w-screen h-screen bg-black overflow-hidden">
 
-    <!-- CONTROLS -->
-    <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/70 to-transparent">
+      <video
+        id="heroVideo"
+        autoplay
+        muted
+        loop
+        playsinline
+        class="w-screen h-full object-contain block"
+      >
+        <source src="/demo.mp4" type="video/mp4" />
+      </video>
 
-      <input 
-        id="progressBar"
-        type="range" 
-        value="0" 
-        step="0.1"
-        class="w-full mb-3"
-      />
+      <!-- 🎮 CONTROLS -->
+      <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/70 to-transparent">
 
-      <div class="flex items-center gap-4 text-white text-sm">
-        <button id="playBtn" class="px-3 py-1 bg-white/10 rounded hover:bg-white/20">
-          Pause
-        </button>
+        <input
+          id="progressBar"
+          type="range"
+          value="0"
+          step="0.1"
+          class="w-full mb-3"
+        />
 
-        <button id="muteBtn" class="px-3 py-1 bg-white/10 rounded hover:bg-white/20">
-          Unmute 🔊
-        </button>
+        <div class="flex items-center gap-4 text-white text-sm">
+          <button id="playBtn" class="px-3 py-1 bg-white/10 rounded hover:bg-white/20">
+            Pause
+          </button>
+
+          <button id="muteBtn" class="px-3 py-1 bg-white/10 rounded hover:bg-white/20">
+            Unmute 🔊
+          </button>
+        </div>
+
       </div>
 
-    </div>
-
-  </section>
-
-  <!-- 📌 CONTENT (CLOSER TO VIDEO NOW) -->
-  <div class="mt-[-40px]">
-
-    <Hero {...SITE_CONTENT.hero} />
-    <Experience experience={SITE_CONTENT.experience} />
-    <Projects projects={SITE_CONTENT.projects} />
-    <About {...SITE_CONTENT.about} name={SITE_CONTENT.hero.name} />
+    </section>
 
   </div>
 
+  <!-- 📄 REST OF SITE (UNCHANGED LAYOUT + SPACING) -->
+  <Hero {...SITE_CONTENT.hero} />
+  <Experience experience={SITE_CONTENT.experience} />
+  <Projects projects={SITE_CONTENT.projects} />
+  <About {...SITE_CONTENT.about} name={SITE_CONTENT.hero.name} />
+
 </Layout>
 
-<!-- 🎮 VIDEO SCRIPT (ASTRO SAFE) -->
+<!-- 🎮 VIDEO LOGIC -->
 <script is:inline>
   const video = document.getElementById("heroVideo");
   const playBtn = document.getElementById("playBtn");
   const muteBtn = document.getElementById("muteBtn");
-  const progress = document.getElementById("progressBar");
+  const progressBar = document.getElementById("progressBar");
 
-  if (video && playBtn && muteBtn && progress) {
+  // Play / Pause
+  playBtn.addEventListener("click", () => {
+    if (video.paused) {
+      video.play();
+      playBtn.textContent = "Pause";
+    } else {
+      video.pause();
+      playBtn.textContent = "Play";
+    }
+  });
 
-    playBtn.addEventListener("click", () => {
-      if (video.paused) {
-        video.play();
-        playBtn.textContent = "Pause";
-      } else {
-        video.pause();
-        playBtn.textContent = "Play";
-      }
-    });
+  // Mute / Unmute
+  muteBtn.addEventListener("click", () => {
+    video.muted = !video.muted;
+    muteBtn.textContent = video.muted ? "Unmute 🔊" : "Mute 🔇";
+  });
 
-    muteBtn.addEventListener("click", () => {
-      video.muted = !video.muted;
-      muteBtn.textContent = video.muted ? "Unmute 🔊" : "Mute 🔇";
-    });
+  // Progress bar
+  video.addEventListener("timeupdate", () => {
+    if (video.duration) {
+      progressBar.value = (video.currentTime / video.duration) * 100;
+    }
+  });
 
-    video.addEventListener("timeupdate", () => {
-      if (video.duration) {
-        progress.value = (video.currentTime / video.duration) * 100;
-      }
-    });
-
-    progress.addEventListener("input", () => {
-      if (video.duration) {
-        video.currentTime = (progress.value / 100) * video.duration;
-      }
-    });
-
-  }
+  progressBar.addEventListener("input", () => {
+    video.currentTime = (progressBar.value / 100) * video.duration;
+  });
 </script>
