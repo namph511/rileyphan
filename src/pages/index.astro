@@ -10,7 +10,59 @@ import "../styles/global.css";
 ---
 
 <Layout>
-  <script is:inline>
+
+  <!-- 🎬 VIDEO PLAYER -->
+  <section class="w-full h-screen bg-black flex items-center justify-center relative">
+
+    <!-- VIDEO -->
+    <video 
+      id="heroVideo"
+      autoplay 
+      muted 
+      loop 
+      playsinline
+      class="w-full h-full object-contain"
+    >
+      <source src="/demo.mp4" type="video/mp4" />
+    </video>
+
+    <!-- CONTROLS -->
+    <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/70 to-transparent">
+
+      <!-- PROGRESS BAR -->
+      <input 
+        id="progressBar"
+        type="range" 
+        value="0" 
+        step="0.1"
+        class="w-full mb-3"
+      />
+
+      <!-- BUTTONS -->
+      <div class="flex items-center gap-4 text-white text-sm">
+        <button id="playBtn" class="px-3 py-1 bg-white/10 rounded hover:bg-white/20">
+          Pause
+        </button>
+
+        <button id="muteBtn" class="px-3 py-1 bg-white/10 rounded hover:bg-white/20">
+          Unmute 🔊
+        </button>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ORIGINAL CONTENT (UNCHANGED) -->
+  <Hero {...SITE_CONTENT.hero} />
+  <Experience experience={SITE_CONTENT.experience} />
+  <Projects projects={SITE_CONTENT.projects} />
+  <About {...SITE_CONTENT.about} name={SITE_CONTENT.hero.name} />
+
+</Layout>
+
+<!-- ✅ ASTRO-SAFE SCRIPT -->
+<script is:inline>
   const video = document.getElementById("heroVideo");
   const playBtn = document.getElementById("playBtn");
   const muteBtn = document.getElementById("muteBtn");
@@ -37,18 +89,17 @@ import "../styles/global.css";
 
     // UPDATE PROGRESS
     video.addEventListener("timeupdate", () => {
-      progress.value = (video.currentTime / video.duration) * 100 || 0;
+      if (video.duration) {
+        progress.value = (video.currentTime / video.duration) * 100;
+      }
     });
 
     // SEEK
     progress.addEventListener("input", () => {
-      video.currentTime = (progress.value / 100) * video.duration;
+      if (video.duration) {
+        video.currentTime = (progress.value / 100) * video.duration;
+      }
     });
 
   }
 </script>
-  <Hero {...SITE_CONTENT.hero} />
-  <Experience experience={SITE_CONTENT.experience} />
-  <Projects projects={SITE_CONTENT.projects} />
-  <About {...SITE_CONTENT.about} name={SITE_CONTENT.hero.name} />
-</Layout>
