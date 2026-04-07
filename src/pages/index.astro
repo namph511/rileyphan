@@ -11,10 +11,9 @@ import "../styles/global.css";
 
 <Layout>
 
-  <!-- 🎬 VIDEO PLAYER -->
-  <section class="w-full h-screen bg-black flex items-center justify-center relative">
+  <!-- 🎬 VIDEO (NO GAP FIXED) -->
+  <section class="w-full h-[90vh] bg-black flex items-center justify-center relative m-0 p-0">
 
-    <!-- VIDEO -->
     <video 
       id="heroVideo"
       autoplay 
@@ -29,7 +28,6 @@ import "../styles/global.css";
     <!-- CONTROLS -->
     <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/70 to-transparent">
 
-      <!-- PROGRESS BAR -->
       <input 
         id="progressBar"
         type="range" 
@@ -38,7 +36,6 @@ import "../styles/global.css";
         class="w-full mb-3"
       />
 
-      <!-- BUTTONS -->
       <div class="flex items-center gap-4 text-white text-sm">
         <button id="playBtn" class="px-3 py-1 bg-white/10 rounded hover:bg-white/20">
           Pause
@@ -53,15 +50,19 @@ import "../styles/global.css";
 
   </section>
 
-  <!-- ORIGINAL CONTENT (UNCHANGED) -->
-  <Hero {...SITE_CONTENT.hero} />
-  <Experience experience={SITE_CONTENT.experience} />
-  <Projects projects={SITE_CONTENT.projects} />
-  <About {...SITE_CONTENT.about} name={SITE_CONTENT.hero.name} />
+  <!-- 📌 CONTENT (CLOSER TO VIDEO NOW) -->
+  <div class="mt-[-40px]">
+
+    <Hero {...SITE_CONTENT.hero} />
+    <Experience experience={SITE_CONTENT.experience} />
+    <Projects projects={SITE_CONTENT.projects} />
+    <About {...SITE_CONTENT.about} name={SITE_CONTENT.hero.name} />
+
+  </div>
 
 </Layout>
 
-<!-- ✅ ASTRO-SAFE SCRIPT -->
+<!-- 🎮 VIDEO SCRIPT (ASTRO SAFE) -->
 <script is:inline>
   const video = document.getElementById("heroVideo");
   const playBtn = document.getElementById("playBtn");
@@ -70,7 +71,6 @@ import "../styles/global.css";
 
   if (video && playBtn && muteBtn && progress) {
 
-    // PLAY / PAUSE
     playBtn.addEventListener("click", () => {
       if (video.paused) {
         video.play();
@@ -81,20 +81,17 @@ import "../styles/global.css";
       }
     });
 
-    // MUTE / UNMUTE
     muteBtn.addEventListener("click", () => {
       video.muted = !video.muted;
       muteBtn.textContent = video.muted ? "Unmute 🔊" : "Mute 🔇";
     });
 
-    // UPDATE PROGRESS
     video.addEventListener("timeupdate", () => {
       if (video.duration) {
         progress.value = (video.currentTime / video.duration) * 100;
       }
     });
 
-    // SEEK
     progress.addEventListener("input", () => {
       if (video.duration) {
         video.currentTime = (progress.value / 100) * video.duration;
