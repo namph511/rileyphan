@@ -66,21 +66,21 @@ export const SITE_CONTENT: SiteContent = {
     {
       name: "The Last Beep - Student 3D Animated Short Film Project",
       summary: "A sudden incident of a cat and its owner in daily life.",
-      linkPreview: "/",
+      
       linkSource: "https://humberital-my.sharepoint.com/:v:/g/personal/n01607582_humber_ca/IQCA_TH0vrKrQaV66Ty1UvcxAQ0K9IMws_zW9HaVkp7KlGg?e=XtYgXs",
       image: "/the-last-beep.jpg",
     },
     {
       name: "The King Animation",
       summary: "An extradionary fight scene that might be the greatest in the movie industry.",
-      linkPreview: "/",
+      
       linkSource: "https://youtu.be/VormddgbIig",
       image: "/the-king.jpg",
     },
     {
       name: "Marvel's Midnight Suns",
       summary: "A masterpiece triple-A game that I participated in creating.",
-      linkPreview: "/",
+      
       linkSource: "https://www.youtube.com/watch?v=ncrWmo6cH_s",
       image: "/marvel-midnight-suns.jpg",
     },
