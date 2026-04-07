@@ -11,12 +11,45 @@ import "../styles/global.css";
 
 <Layout>
 
-  <!-- 🎬 AUTOPLAY VIDEO (NEW) -->
-  <section class="w-full h-screen overflow-hidden bg-black">
-    <video autoplay muted loop playsinline class="w-full h-full object-cover">
-      <source src="/demo.mp4" type="video/mp4" />
-    </video>
-  </section>
+  <!-- 🎬 AUTOPLAY VIDEO -->
+<section class="w-full h-screen overflow-hidden bg-black relative">
+
+  <!-- VIDEO -->
+  <video 
+    id="heroVideo"
+    autoplay 
+    muted 
+    loop 
+    playsinline
+    class="w-full h-full object-contain cursor-pointer"
+  >
+    <source src="/demo.mp4" type="video/mp4" />
+  </video>
+
+  <!-- CLICK TO UNMUTE OVERLAY -->
+  <div 
+    id="unmuteOverlay"
+    class="absolute inset-0 flex items-center justify-center text-white text-sm bg-black/30 cursor-pointer"
+  >
+    Click to unmute 🔊
+  </div>
+
+</section>
+
+<!-- SCRIPT -->
+<script>
+  const video = document.getElementById("heroVideo");
+  const overlay = document.getElementById("unmuteOverlay");
+
+  function unmuteVideo() {
+    video.muted = false;
+    video.volume = 1;
+    overlay.style.display = "none";
+  }
+
+  video.addEventListener("click", unmuteVideo);
+  overlay.addEventListener("click", unmuteVideo);
+</script>
 
   <Hero {...SITE_CONTENT.hero} />
   <Experience experience={SITE_CONTENT.experience} />
