@@ -77,7 +77,7 @@ export const SITE_CONTENT: SiteContent = {
       name: "The King Animation",
       summary: "An extradionary fight scene that might be the greatest in the movie industry.",
       
-      linkSource: "https://youtu.be/VormddgbIig",
+      linkSource: "https://youtu.be/oiyw21qrh5c",
       image: "/the-king.jpg",
     },
     {
