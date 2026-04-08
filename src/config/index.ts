@@ -36,19 +36,22 @@ export const SITE_CONTENT: SiteContent = {
       startDate: "Nov 2021",
       endDate: "Aug 2023",
       summary: [
-        "I animated 3D models, including acting and sequences for cutscenes, movies, and games.",
-        "Handling multiple software apps for animation, such as Maya, 3DS Max and Unreal Engine",
-        "Follow the director's direction and deliver punctual client notes on-time.",
+        "Produced high-quality 3D character animations for cinematic cutscenes and gameplay sequences, consistently meeting studio-level quality benchmarks",
+        "Applied strong acting principles and body mechanics to deliver believable and engaging performances across complex shots",
+        "Ensured shot continuity and consistency across sequences by aligning animation with established artistic direction and style guides",
+        "Identified and resolved animation and rig-related issues, contributing to smoother team production and fewer downstream problems",
       ],
     },
     {
       company: "Humber College",
-      position: "3D animation student",
+      position: "3D Animation Student (Advanced Diploma)",
       startDate: "Sept 2023",
       endDate: "April 2026",
       summary: [
-        "I improved my animation skills and gained a lot of experience in art style.",
-        "I led the animation department of a team with 19 people for a 3D animated short film project.",
+        "Led the animation team for a 19-member 3D short film project, mentoring peers and providing artistic and technical feedback",
+        "Directed animation quality and ensured consistency across multiple shots and sequences, maintaining a unified visual narrative",
+        "Implemented structured shot tracking and workflow improvements, helping streamline review and approval processes",
+        "Collaborated with leaders and cross-functional teams to translate storyboards into polished animation sequences",
       ],
     },
     {
@@ -57,8 +60,8 @@ export const SITE_CONTENT: SiteContent = {
       startDate: "Aug 2024",
       endDate: "now",
       summary: [
-        "Provided fast, friendly, and efficient service to customers in a high-paced environment.",
-        "Handled high volumes of customers while maintaining accuracy and efficiency.",
+        "Demonstrated strong teamwork and communication in a fast-paced, high-pressure environment",
+        "Maintained efficiency and accuracy while handling high customer volume, reinforcing reliability under tight deadlines",
       ],
     },
   ],
@@ -87,9 +90,7 @@ export const SITE_CONTENT: SiteContent = {
   ],
   about: {
     description: `
-      Hi, I’m Riley Phan, a passionate 3D Animator. With a strong background in animation, I thrive in the intersection where creativity meets technology.
-
-      Over the years, I’ve honed my skills in building robust, eye-catching animations that not only meet the needs of viewers but also push the boundaries of what’s possible. My projects range from simple to the most complicated animations, all with a focus on performance, punctuality, and scalability.
+      Hi, I’m Riley Phan, a 3D Character Animator with a strong focus on performance, acting, and storytelling. I specialize in creating expressive, high-quality animations that balance creativity with technical precision. With experience in both production and team leadership, I’m passionate about delivering polished work that meets artistic vision and production demands.
     `,
     image: "/riley-big.jpg",
   },
